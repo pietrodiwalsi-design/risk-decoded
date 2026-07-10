@@ -1,0 +1,47 @@
+# Risk Decoded — channel-wide defaults (inherited by every episode)
+channel:
+  name: "Risk Decoded"          # working title — confirm
+  language_default: "en"
+
+host:
+  character: "qubit"            # Remotion SVG rig — no generative video
+  # signature demos: spin=superposition, twin=entanglement, ripple=interference
+
+brand:
+  palette:
+    bg_dark:   "#0F1E2E"
+    bg_light:  "#F4F6F9"
+    accent:    "#18C3B4"        # teal — Qubit signature / explaining
+    caution:   "#F4A63B"        # amber — risk beats
+    danger:    "#E4572E"        # red — threats only
+    text_dark: "#14171A"
+    text_light:"#F7FAFC"
+  fonts:
+    heading: "Inter"            # geometric sans; swap if licensing prefers
+    caption: "Inter"
+  captions: true                # always on (accessibility + silent autoplay)
+
+render:
+  resolution: "1920x1080"
+  fps: 30
+  loudness_lufs: -14
+  template: "risk-decoded-v1"
+  max_concurrency: 2            # cap render workers to protect Moshe's live services
+
+providers:
+  voice:
+    provider: "elevenlabs"
+    model: "eleven_multilingual_v2"
+  image:
+    provider: "nano_banana"     # Gemini image API (Moshe's existing Google link)
+    max_images: 8               # per-episode cost cap
+  motion:
+    provider: "none"            # or "higgsfield" for rare hero clips
+
+publish:
+  youtube: "draft"              # draft|private|off — never public via pipeline
+  ai_disclosure: true           # set synthetic-content flag on every upload
+
+qa:
+  require_accuracy_pass: true   # Claude gate before assets are generated
+  block_on_ip_flags: true       # no real logos / named people / employer refs

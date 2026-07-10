@@ -1,0 +1,19 @@
+episode:
+  id: "ep02"
+  title: "The Quantum Threat: Harvest Now, Decrypt Later"
+  script: "scripts/ep02-quantum-threat.md"
+  language: "en"
+  target_runtime_sec: 410
+voice:
+  voice_id: "REPLACE_WITH_LOCKED_HOST_VOICE"
+image:
+  max_images: 8
+  style_refs: ["assets/style/qubit_ref_*.png"]
+video_motion:
+  provider: "none"
+outputs:
+  long_form: true
+  shorts: ["short_a", "short_b", "short_c"]
+publish:
+  youtube: "draft"
+  ai_disclosure: true

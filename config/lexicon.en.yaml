@@ -1,0 +1,19 @@
+# Pronunciation overrides for TTS. Keep jargon crisp and consistent across episodes.
+# Format: term -> phonetic hint / SSML alias (provider-dependent; treat as guidance).
+lexicon:
+  qubit:        "KYOO-bit"
+  qubits:       "KYOO-bits"
+  ML-KEM:       "M-L-KEM"
+  ML-DSA:       "M-L-D-S-A"
+  SLH-DSA:      "S-L-H-D-S-A"
+  HQC:          "H-Q-C"
+  NIS2:         "N-I-S two"
+  DORA:         "DOR-ah"
+  "Solvency II":"Solvency two"
+  RSA:          "R-S-A"
+  ECC:          "E-C-C"
+  Q-Day:        "Q day"
+  HNDL:         "H-N-D-L"
+  qubit's:      "KYOO-bits"
+  Higgsfield:   "HIGS-field"
+  Hetzner:      "HETS-ner"

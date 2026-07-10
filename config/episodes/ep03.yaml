@@ -1,0 +1,20 @@
+episode:
+  id: "ep03"
+  title: "Quantum & Insurance: How It Rewrites the Business"
+  script: "scripts/ep03-quantum-insurance.md"
+  language: "en"
+  target_runtime_sec: 430
+voice:
+  voice_id: "REPLACE_WITH_LOCKED_HOST_VOICE"
+image:
+  max_images: 8
+  style_refs: ["assets/style/qubit_ref_*.png"]
+video_motion:
+  provider: "none"
+outputs:
+  long_form: true
+  shorts: ["short_a", "short_b", "short_c"]
+publish:
+  youtube: "draft"
+  ai_disclosure: true
+# NOTE: enrich from Peter's Downloads QC research before final render (see script §[[ENRICH]])

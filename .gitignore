@@ -1,0 +1,32 @@
+# Secrets — NEVER commit
+.env
+.env.*
+*.key
+*.pem
+secrets/
+config/secrets.*
+
+# Build artefacts & generated media (regenerable)
+build/
+assets/generated/
+*.mp3
+*.wav
+*.mp4
+*.mov
+*.png
+*.jpg
+*.jpeg
+!assets/style/**            # style refs ARE committed
+!**/*.gitkeep
+
+# Node / Remotion
+node_modules/
+.remotion/
+dist/
+npm-debug.log*
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
+*.swp
