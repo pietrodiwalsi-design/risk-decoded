@@ -1,0 +1,26 @@
+<svg width="240" height="300" viewBox="0 0 240 300" xmlns="http://www.w3.org/2000/svg" role="img">
+  <title>Qubit — host concept v1 (transparent, for compositing)</title>
+  <desc>Minimalist cartoon qubit host: sphere body with Bloch-sphere ring, dot eyes, smile, thin stick limbs.</desc>
+  <!-- Bloch-sphere motif -->
+  <ellipse cx="120" cy="122" rx="84" ry="25" fill="none" stroke="#18C3B4" stroke-width="2" opacity="0.45" transform="rotate(-18 120 122)"/>
+  <ellipse cx="120" cy="122" rx="84" ry="25" fill="none" stroke="#18C3B4" stroke-width="2" opacity="0.20" transform="rotate(34 120 122)"/>
+  <line x1="120" y1="58" x2="120" y2="188" stroke="#18C3B4" stroke-width="2" opacity="0.25"/>
+  <!-- state marker -->
+  <line x1="120" y1="72" x2="120" y2="60" stroke="#18C3B4" stroke-width="3" stroke-linecap="round"/>
+  <path d="M120 44 l8 8 -8 8 -8 -8 z" fill="#F4A63B"/>
+  <!-- arms -->
+  <path d="M74 128 L54 92" stroke="#18C3B4" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="52" cy="90" r="7" fill="#18C3B4"/>
+  <path d="M166 128 L188 150" stroke="#18C3B4" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="190" cy="152" r="7" fill="#18C3B4"/>
+  <!-- legs -->
+  <path d="M106 168 L99 214" stroke="#18C3B4" stroke-width="6" stroke-linecap="round"/>
+  <path d="M99 214 L84 219" stroke="#18C3B4" stroke-width="6" stroke-linecap="round"/>
+  <path d="M134 168 L142 214" stroke="#18C3B4" stroke-width="6" stroke-linecap="round"/>
+  <path d="M142 214 L157 219" stroke="#18C3B4" stroke-width="6" stroke-linecap="round"/>
+  <!-- body -->
+  <circle cx="120" cy="122" r="52" fill="#F4F6F9" stroke="#18C3B4" stroke-width="4"/>
+  <circle cx="104" cy="114" r="7" fill="#14171A"/>
+  <circle cx="136" cy="114" r="7" fill="#14171A"/>
+  <path d="M104 140 Q120 156 136 140" fill="none" stroke="#14171A" stroke-width="4" stroke-linecap="round"/>
+</svg>
