@@ -15,6 +15,6 @@ outputs:
   long_form: true
   shorts: ["short_a", "short_b", "short_c"]
 publish:
-  youtube: "draft"
+  youtube: "package"   # package|off — the pipeline never uploads or publishes
   ai_disclosure: true
 # inherits palette/fonts/render/qa from config/channel.yaml

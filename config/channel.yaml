@@ -39,7 +39,7 @@ providers:
     provider: "none"            # or "higgsfield" for rare hero clips
 
 publish:
-  youtube: "draft"              # draft|private|off — never public via pipeline
+  youtube: "package"            # package|off — the pipeline never uploads or publishes
   ai_disclosure: true           # set synthetic-content flag on every upload
 
 qa:

@@ -1,14 +1,23 @@
 # Risk Decoded — Roles & Orchestration (Moshe / OpenClaw)
 
-**Status:** Draft for Peter's approval · 2026-07-10 · **rev 2** (corrects Moshe = agent, not human; maps to Hetzner topology)
-**Companion to:** REQUIREMENTS.md · BUILD-EXECUTION-PLAN.md
+**Status:** Draft for Peter's approval · 2026-10-02 · **rev 3** (Sonnet as coding agent inside OpenClaw; Gemini as trigger-only orchestrator; YouTube token excluded from OpenClaw; accuracy gate independent of the build stack)
+**Previous:** rev 2 · 2026-07-10 (Moshe = agent, not human; Hetzner topology)
+**Companion to:** REQUIREMENTS.md v1.1 · BUILD-EXECUTION-PLAN.md v1.1
 **Purpose:** Decide *which executor runs each stage* — routing every task to the cheapest capable executor, keeping high-stakes reasoning on strong models, and keeping the one human (Peter) on the gates.
+
+**Changes in rev 3 (all marked "rev 3" below):**
+1. Moshe's stack is now Gemini (orchestrator) + Anthropic Sonnet (coding agent) + Grok (fallback) + Ollama (local).
+2. Gemini only *triggers* deterministic pipeline stages; it does not perform them.
+3. Pipeline engineering (Phases 2–4) moves to Sonnet inside OpenClaw on `moshe/*` branches; Claude outside OpenClaw reviews.
+4. The accuracy + IP gate runs outside the OpenClaw run, so the stack that builds an episode never signs it off.
+5. The YouTube credential is kept out of OpenClaw. Telegram is notification-only, not a publish path.
+6. Phase 1 (M2 pilot) is done by hand on Peter's Mac before any automation is built.
 
 ---
 
-## 0. Correction — who "Moshe" is
+## 0. Who "Moshe" is
 
-**Moshe is the OpenClaw agent runtime on Hetzner** (`ubuntu-4gb-nbg1-1` — **8 GB RAM** despite the hostname, Nürnberg) — not a person. It has its own identity (Gmail `moshe.van.walsem`, Telegram, Drive, Calendar) and its own model stack: **Gemini (primary, 1M ctx), xAI Grok (fallback), Anthropic Claude (heavy reasoning), Ollama (local)**. "Fable" = the Claude-based agent. **Peter is the only human.** All earlier references to "Moshe (human)" are re-cast below as the agent; the human gate is Peter.
+**Moshe is the OpenClaw agent runtime on Hetzner** (`ubuntu-4gb-nbg1-1` — **8 GB RAM** despite the hostname, Nürnberg) — not a person. It has its own identity (Gmail `moshe.van.walsem`, Telegram, Drive, Calendar) and its own model stack (rev 3): **Gemini (orchestrator, 1M ctx), Anthropic Sonnet (coding agent), xAI Grok (fallback), Ollama (local)**. ElevenLabs and Nano Banana (Gemini image) links and API keys are already created. "Fable" = the Claude-based agent working outside OpenClaw. **Peter is the only human.**
 
 ---
 
@@ -16,11 +25,15 @@
 
 Route by *cost-of-being-wrong*, on infrastructure you already run:
 
-1. **Cheapest capable model does the grind** → **Moshe/OpenClaw** on Gemini/Grok/Ollama. Already your always-on, cheapest runner.
-2. **Strong model does the high-stakes reasoning** → **Claude (Fable)**: accuracy gate, Qubit design, hard engineering, review.
-3. **The human holds the gates** → **Peter** approves at each milestone and authorises publish (via Telegram).
+1. **Cheapest capable model does the grind** → **Moshe/OpenClaw** on Gemini/Grok/Ollama.
+2. **Coding agent builds the pipeline** → **Sonnet inside OpenClaw**, on `moshe/*` branches, with a token budget per task (rev 3).
+3. **Independent strong model holds the high-stakes gates** → **Claude (Fable), outside OpenClaw**: accuracy gate, IP gate, Qubit design, code review.
+4. **The human holds the gates** → **Peter** approves at each milestone and publishes manually.
 
-Control rule: a cheap model may *draft* a title or a scene split; it may **not** be the accuracy or IP gate.
+Control rules:
+- A cheap model may *draft* a title or a scene split; it may **not** be the accuracy or IP gate.
+- (rev 3) The stack that builds an episode may not sign it off. The accuracy + IP gate runs outside the OpenClaw run.
+- (rev 3) Deterministic steps (voice call, caption sync, render, cut) are plain code. The orchestrator model only triggers them (`make episode EP=…`) and reads the result.
 
 ---
 
@@ -28,10 +41,11 @@ Control rule: a cheap model may *draft* a title or a scene split; it may **not**
 
 | Executor | Is | Runs on | Best at |
 |---|---|---|---|
-| **Moshe / OpenClaw** | Autonomous agent (Gemini primary · Grok fallback · Ollama local) | Hetzner `ubuntu-4gb-nbg1-1`, behind Tailscale + Hetzner firewall | Orchestration + grind: scene decomposition, **Nano Banana stills (via its Gemini link)**, Shorts drafts, metadata; running the per-episode pipeline unattended |
-| **Claude (Fable)** | Strong reasoning model | Anthropic API (already wired to the box) | Accuracy fact-check, Qubit design, template/pipeline engineering, quality review, hard debugging |
-| **Peter** | The human | Mac, via Tailscale / Telegram | Creative + accuracy sign-off; the publish authorisation |
-| **Pipeline code** | Deterministic scripts | Hetzner (+ ephemeral render worker) | ElevenLabs calls, caption sync, Remotion render, ffmpeg cut, YouTube upload |
+| **Moshe / Gemini** | Orchestrator model inside OpenClaw (Grok fallback · Ollama local) | Hetzner `ubuntu-4gb-nbg1-1`, behind Tailscale + Hetzner firewall | Triggering pipeline runs, scene-decomposition drafts, Nano Banana stills, Shorts and metadata drafts, notifications |
+| **Moshe / Sonnet** (rev 3) | Coding agent inside OpenClaw | Same box, Anthropic API | Pipeline engineering: stage runners, provider modules, Remotion components, on `moshe/*` branches |
+| **Claude (Fable)** | Independent strong model, outside OpenClaw | Cowork / Claude Code on Peter's Mac | Accuracy fact-check gate, IP gate, Qubit design, review of Moshe's pull requests, hard debugging |
+| **Peter** | The human | Mac, via Tailscale / Telegram | Creative + accuracy sign-off; merges to `main`; the upload and publish actions |
+| **Pipeline code** | Deterministic scripts | Hetzner (+ ephemeral render worker) | ElevenLabs calls, caption sync, Remotion render, ffmpeg cut |
 
 ---
 
@@ -39,25 +53,29 @@ Control rule: a cheap model may *draft* a title or a scene split; it may **not**
 
 R = Runs · A = Approves · C = Consulted · I = Informed
 
-| Pipeline stage | Moshe/OpenClaw | Claude | Peter | Code |
-|---|:--:|:--:|:--:|:--:|
-| Topic/script authoring | C | R (draft) | **A/R** | – |
-| **Accuracy fact-check gate (FR-Q1)** | – | **R** | **A** | – |
-| Scene decomposition → scenes.json | **R** (Gemini/Grok) | C | I | validate |
-| Nano Banana prompts + stills | **R** (Gemini) | C | I | – |
-| Voice synthesis (ElevenLabs) | trigger | – | I | **R** |
-| Caption/timing sync | – | – | I | **R** |
-| Qubit design (concept → SVG rig) | assist | **R** | **A** | – |
-| Remotion composition/render | orchestrate | C | I | **R** (ephemeral worker) |
-| Shorts selection + cut | **R** (draft) | C | A | R (cut) |
-| Metadata (title/desc/tags) | **R** (variants) | C | **A** | – |
-| Thumbnail generation | **R** (Nano Banana) | – | A | – |
-| YouTube **draft** upload | **R** (trigger) | – | I | **R** |
-| **Publish to public** | notify | – | **A/R** (Telegram approve) | – |
-| Per-episode run + monitoring | **R** | – | I | R |
-| Pipeline build (Phases 2–4) | assist | **R** (design+impl) | **A** | – |
+| Pipeline stage | Moshe / Gemini | Moshe / Sonnet | Claude (outside) | Peter | Code |
+|---|:--:|:--:|:--:|:--:|:--:|
+| Topic/script authoring | C | – | R (draft) | **A/R** | – |
+| **Accuracy fact-check gate (FR-Q1)** | – | – | **R** | **A** | – |
+| **IP hygiene gate (FR-Q3)** | – | – | **R** | **A** | – |
+| Scene decomposition → scenes.json | **R** (draft, once) | – | C | A (commit) | validate |
+| Nano Banana prompts + stills | **R** | – | C | I | – |
+| Voice synthesis (ElevenLabs) | trigger | – | – | I | **R** |
+| Caption/timing sync | – | – | – | I | **R** |
+| Qubit design (concept → SVG rig) | assist | assist | **R** | **A** | – |
+| Episode 1 pilot (M2, by hand) | – | – | **R** | **A/R** | – |
+| Remotion composition/render | trigger | – | C | I | **R** (ephemeral worker) |
+| Shorts selection + cut | **R** (draft) | – | C | A | R (cut) |
+| Metadata (title/desc/tags) | **R** (variants) | – | C | **A** | – |
+| Thumbnail generation | **R** (Nano Banana) | – | – | A | – |
+| YouTube **draft** upload (rev 3) | notify only | – | – | **R** | optional script outside OpenClaw |
+| **Publish to public** (rev 3) | – | – | – | **A/R** (manual, YouTube Studio) | – |
+| Per-episode run + monitoring | **R** | – | – | I | R |
+| Pipeline build (Phases 2–4) (rev 3) | trigger | **R** (impl) | C (review) | **A** (merge) | – |
 
-**Shape of it:** Moshe runs the show day-to-day (grind + orchestration + images, all on models it already pays for); Claude is called only for design, accuracy, and hard engineering; Peter approves at gates and taps "publish" in Telegram.
+**Shape of it:** Peter and Claude prove the format by hand up to M2. From M3, Sonnet inside OpenClaw builds the pipeline and Gemini runs it day to day. Claude outside OpenClaw holds the accuracy and IP gates and reviews Moshe's code. Peter merges, uploads and publishes.
+
+**scenes.json (rev 3):** generated once by the model, reviewed, then committed. Rebuilds read the committed file, which is how FR-C3 (deterministic regeneration) is met; an LLM call is not repeatable byte for byte.
 
 ---
 
@@ -65,19 +83,32 @@ R = Runs · A = Approves · C = Consulted · I = Informed
 
 Reuse what Moshe already has; add only what's missing.
 
-| Pipeline need | Reuse (already on the diagram) | Add |
+| Pipeline need | Reuse | Add |
 |---|---|---|
-| Grind LLM | Gemini (primary) · Grok (fallback) · Ollama (local trivial) | — |
-| Image stills / thumbnails | **Gemini = Nano Banana** (already integrated) | Gemini **image** API scope/key |
-| Heavy reasoning / accuracy | Anthropic Claude (already wired) | — |
+| Orchestrator / grind LLM | Gemini (primary) · Grok (fallback) · Ollama (local trivial) | — |
+| Coding agent (rev 3) | Anthropic Sonnet (already in use in OpenClaw) | Token budget per task |
+| Image stills / thumbnails | Gemini = Nano Banana (link + key created) | Provider-side spend cap |
+| Voice (rev 3) | ElevenLabs (link + key created) | Provider-side spend cap; locked `voice_id` |
+| Accuracy / IP gate | Claude outside OpenClaw (Cowork / Claude Code) | — |
 | Script + asset storage | Google Drive (Docs/Sheets) | `risk-decoded` asset conventions |
-| Source repo | GitHub (already the backup/apps target) | `risk-decoded` repo + gitleaks on push |
-| Notifications + approvals | Telegram (bot + channel) | Approve/publish command flow |
-| Voice | — | **ElevenLabs** account + key |
-| Video render | — | **Remotion + ffmpeg** + **ephemeral render worker** (see §5) |
-| Control surface (optional) | Render.com (app deploy) | optional pipeline dashboard — not required |
+| Source repo | GitHub | `risk-decoded` repo + gitleaks on push (done) |
+| Notifications | Telegram (bot + channel) | "Upload package ready for review" message; no publish command |
+| Video render | — | Remotion + ffmpeg + ephemeral render worker (see §5) |
+| YouTube upload (rev 3) | — | **Not on the box.** Manual, or a script on Peter's Mac |
 
-**Access & security (unchanged, respected):** everything reachable only via **Tailscale** (`100.113.189.75`); Hetzner firewall stays **deny-public-default**; Peter's Mac has no direct public path to OpenClaw. Publish approvals ride the existing **Telegram** channel — Peter taps approve; nothing goes public autonomously. Secrets stay in the box's store **outside** `/root/.openclaw/workspace`; the **daily 02:00 UTC backup → GitHub** must keep the gitleaks pre-push guard (matches your prior hardening; new keys land outside the workspace tree).
+**Access & security:** everything reachable only via **Tailscale** (`100.113.189.75`); Hetzner firewall stays **deny-public-default**; Peter's Mac has no direct public path to OpenClaw. Secrets stay in the box's store **outside** `/root/.openclaw/workspace`; the **daily 02:00 UTC backup → GitHub** must keep the gitleaks pre-push guard.
+
+**Credential scope (rev 3):**
+
+| Credential | In OpenClaw? | Control |
+|---|---|---|
+| ElevenLabs key | Yes | Project-specific key, provider-side spend cap, outside workspace tree |
+| Gemini image key | Yes | Project-specific key, provider-side spend cap, outside workspace tree |
+| Anthropic key (Sonnet) | Yes | Budget cap per task |
+| GitHub | Yes | `moshe/*` branches only; `main` protected |
+| **YouTube OAuth token** | **No** | The one credential that can publish; held by Peter only |
+
+Reason: an upload token can also set a video public, so if Moshe holds it, "nothing publishes automatically" is a convention and not a control. OpenClaw's 2026 security record (several hundred tracked CVEs, malicious skills on ClawHub) makes that the credential to keep away from it. Also: no unverified ClawHub skills on this box, and keep OpenClaw patched.
 
 ---
 
@@ -95,10 +126,10 @@ Current box is **CPX32** — 4 vCPU / **8 GB** / 80 GB / **€42.94/mo** (the `�
 
 **Recommended instead:**
 1. **Keep CPX32** as the always-on Moshe box.
-2. **Render on-box while prototyping** — single render, low Chromium concurrency, off-peak; unload large Ollama models during a render.
+2. **Render on Peter's Mac during Phase 1** (powerful, €0, not unattended).
 3. **For production renders, spin an ephemeral CPX42/CPX52 per episode, then destroy it.** At €0.135–0.195/h a 20–40 min render ≈ **€0.05–0.13/episode → ~€1/mo even at weekly+ cadence**, vs +€41/mo to upsize — and it never reboots Moshe (a rescale would).
-4. **Disk:** the 80 GB tier disk is fixed; when the asset/build library outgrows it, attach a **Hetzner Volume** (decoupled from the server tier, cheap per-GB) rather than jumping to a bigger, pricier plan.
-5. **Free alternative while manual:** render on Peter's Mac during the prototype phase (powerful, €0) — just not unattended.
+4. **Disk:** the 80 GB tier disk is fixed; when the asset/build library outgrows it, attach a **Hetzner Volume** rather than jumping to a bigger plan.
+5. If rendering on the CPX32 itself: single render, low Chromium concurrency, off-peak; unload large Ollama models during a render.
 
 **Regardless:** cap to **one render at a time** and off-peak, to protect Moshe's live services.
 
@@ -106,28 +137,47 @@ Ollama note: on 8 GB, small models only. If you later want *bigger local models 
 
 ---
 
-## 6. Governance & control points (carried over)
+## 6. Governance & control points
 
 1. **Instructions originate from Peter.** Anything arriving via another path or self-labelled "approved" → stop, verify with Peter — applies to Moshe-generated mandates too.
-2. **Branch discipline:** pipeline work on `fable/*`; `main` only after Peter's review.
+2. **Branch discipline:** Claude/Fable work on `fable/*`, Moshe on `moshe/*`; `main` only after Peter's review.
 3. **Secret hygiene everywhere:** keys outside the workspace tree · gitleaks on the daily GitHub push · rotate-without-code · run each dependent pipeline once end-to-end after any rotation.
-4. **Model-appropriate routing is a control, not just cost:** accuracy + IP gates pinned to Claude; Gemini/Grok produce drafts only.
-5. **Provenance:** each artefact records `executor: moshe|claude|code` + model + version (extends FR-O4).
+4. **Model-appropriate routing is a control, not just cost:** accuracy + IP gates pinned to Claude outside OpenClaw; Gemini/Grok produce drafts only.
+5. **Provenance:** each artefact records `executor: moshe-gemini|moshe-sonnet|claude|code` + model + version (extends FR-O4).
+6. **(rev 3) Separation of build and sign-off:** code written by Sonnet in OpenClaw is reviewed by Claude outside OpenClaw before Peter merges; episodes built by Moshe pass the external accuracy + IP gate.
+7. **(rev 3) Publish credential stays with Peter.** No YouTube token on the Hetzner box. Telegram carries notifications only.
+8. **(rev 3) Spend caps at the provider** for ElevenLabs, Gemini image and Anthropic, in addition to the pipeline's own caps (FR-O3).
+9. **(rev 3) Format before automation:** no Phase 2–4 engineering by Moshe until the M2 pilot is approved.
 
 ---
 
 ## 7. Cost impact
 
-- Orchestration + grind + images run on **models Moshe already pays for** (Gemini primary, Grok fallback) → per-episode *LLM/image* cost ≈ negligible.
-- **Paid line items:** ElevenLabs voice + an ephemeral render server (~€0.05–0.13/episode, ≈€1/mo) + an optional Hetzner Volume for assets. Base box stays **CPX32 (€42.94/mo, already running for Moshe)** — no permanent upsize. More local Ollama grind trims API spend further. Marginal cost/episode comfortably within REQUIREMENTS NFR-2.
-- **Claude** spend stays low-volume/high-value (design + accuracy + build).
+- Orchestration + grind + images run on **models Moshe already pays for** → per-episode LLM/image cost ≈ negligible.
+- **Paid line items:** ElevenLabs voice + an ephemeral render server (~€0.05–0.13/episode, ≈€1/mo) + an optional Hetzner Volume. Base box stays **CPX32 (€42.94/mo, already running for Moshe)**.
+- **(rev 3) Sonnet coding agent:** a one-off build cost during Phases 2–4, not a per-episode cost. Coding-agent loops use far more tokens than chat, so set a budget per task and review spend at each milestone.
+- **Claude outside OpenClaw** stays low-volume/high-value (design + gates + review).
+- Marginal cost/episode remains within REQUIREMENTS NFR-2.
 
 ---
 
 ## 8. Open decisions (confirm)
 
 1. **Render capacity** — keep **CPX32 + ephemeral render server** (recommended), or commit to an always-on 16 GB CPX42 (+€41/mo)?
-2. **Repo home** — `risk-decoded` as a new GitHub repo alongside Moshe's existing ones, `fable/*` workflow?
-3. **Approval UX** — publish gate as a Telegram approve command to Peter (leveraging the existing bot)?
-4. **Model pinning** — confirm accuracy + IP gates stay on Claude, never Gemini/Grok.
-5. **Escalation** — when Moshe's grind output fails schema validation twice → auto-escalate to Claude, or halt and Telegram Peter?
+2. **Repo home** — resolved: `pietrodiwalsi-design/risk-decoded`, `fable/*` + `moshe/*` workflow.
+3. **Draft upload (rev 3)** — Peter uploads by hand in YouTube Studio (about two minutes a week), or a small upload script on Peter's Mac that hard-codes `private`? Either way the token stays off the Hetzner box. Replaces the earlier Telegram-approve design.
+4. **Model pinning** — confirm accuracy + IP gates stay on Claude outside OpenClaw, never Gemini/Grok/Sonnet-in-OpenClaw.
+5. **Escalation** — when Moshe's output fails schema validation twice → hand to Sonnet, or halt and Telegram Peter?
+6. **(rev 3) Key location** — confirm the ElevenLabs and Gemini image keys sit outside `/root/.openclaw/workspace`, are project-specific, and have provider-side spend caps.
+7. **(rev 3) Channel goal** — monetisation or professional credibility? This sets how much weight YouTube's inauthentic-content policy (BUILD-EXECUTION-PLAN R7) gets and how much "unattended" automation is worth building.
+
+---
+
+## 9. Consistency status (2026-10-02)
+
+Aligned with this revision: REQUIREMENTS v1.1, BUILD-EXECUTION-PLAN v1.1, CHANNEL-BIBLE (§4–6).
+
+Not yet aligned:
+- The copies of these docs in the GitHub repo (`pietrodiwalsi-design/risk-decoded`).
+- The Claude Project instructions (role description and pipeline line).
+- MOSHE-HANDOFF.md §4 still points at "five open decisions"; §8 now lists seven.

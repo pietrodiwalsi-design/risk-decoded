@@ -1,6 +1,8 @@
 # Episode 01 — "Quantum Computers, Explained (Without the Hype)"
 
-**Runtime target:** ~6:20 · **Host:** Max · **Language:** English
+*Updated 2026-10-22: host renamed Max → Qubit; shot tags aligned with the scene schema (QUBIT / QUBIT+PANEL). Narration text is unchanged.*
+
+**Runtime target:** ~6:20 · **Host:** Qubit · **Language:** English
 **Arc:** What it is → What it is *not* → the 3 principles → how it affects society
 **Series note:** Episode 2 picks up the security threat (HNDL / Q-Day) in depth.
 
@@ -10,7 +12,7 @@
 
 > Written for text-to-speech: short sentences, natural pauses, one idea per line. `[beat]` = short pause. Bracketed notes are for production, not narration.
 
-**[COLD OPEN — HOST]**
+**[COLD OPEN — QUBIT]**
 Right now, in a handful of labs around the world, engineers are building a machine that could one day crack the encryption protecting your bank account, your medical records — your entire digital life. [beat]
 It's called a quantum computer. [beat]
 And almost everything you've heard about it… is wrong.
@@ -18,14 +20,14 @@ Let's fix that. In six minutes.
 
 **[TITLE STING]**
 
-**[WHAT IT IS — HOST → DIAGRAM]**
+**[WHAT IT IS — QUBIT → DIAGRAM]**
 So what actually *is* a quantum computer? [beat]
 A normal computer — your laptop, your phone — stores everything as bits. Tiny switches, each either a zero or a one. Every photo, every message, every video: just huge strings of zeros and ones.
 A quantum computer doesn't use ordinary switches. It uses *qubits* — and qubits follow the strange rules of quantum physics, the physics of the very, very small.
 That's it. That's the whole idea: a machine that computes using the laws of the quantum world.
 It is *not* science fiction, and it is *not* magic. It's physics — put to work.
 
-**[WHAT IT IS NOT — HOST+PANEL, "Myth vs Reality"]**
+**[WHAT IT IS NOT — QUBIT+PANEL, "Myth vs Reality"]**
 But before the three big ideas, let's kill the myths. Because this is where most people go wrong. [beat]
 Myth one: "A quantum computer is just a much faster laptop." [beat] No. It will *not* replace your PC. For email, spreadsheets, video — an ordinary computer is better, and always will be.
 Myth two: "It tries every possible answer at the same time and instantly picks the best one." [beat] Also no. That's the myth that sounds clever and is just… wrong. It doesn't hand you all the answers. Getting a *useful* answer out is the hard part — and we'll see why in a second.
@@ -54,14 +56,14 @@ A quantum computer is built so that the *wrong* answers cancel each other out, a
 That's the secret. It doesn't magically pick the best answer — it arranges the physics so the best answer is the one you're most likely to measure.
 No interference? You'd just get random noise. Interference is how you get a real answer *out*.
 
-**[HOW IT AFFECTS SOCIETY — HOST → DIAGRAM]**
+**[HOW IT AFFECTS SOCIETY — QUBIT → DIAGRAM]**
 Okay — superposition, entanglement, interference. So what does this actually *change* for the rest of us? Two sides. [beat]
 The upside is genuinely huge. Quantum computers are brilliant at simulating nature itself — molecules, materials, chemistry. That could mean new medicines, better batteries, cleaner fertiliser, smarter materials. It could crack optimisation problems in logistics, energy, and finance that stump today's computers.
 But there's a sharp edge. [beat] The same math that makes quantum powerful can break the encryption that protects almost everything online today. Your bank. Your messages. State secrets.
 The good news: the powerful machine isn't here yet. The bad news: attackers don't need it yet. They can steal encrypted data *today*, store it, and wait to unlock it later.
 Experts call the day this becomes possible "Q-Day" — and most put it somewhere in the 2030s. Which is exactly why governments and banks are *already* switching to new, quantum-proof encryption.
 
-**[OUTRO — HOST]**
+**[OUTRO — QUBIT]**
 So — a quantum computer isn't a faster laptop, it isn't magic, and it isn't here at full strength yet. It's a machine that turns three weird rules of physics into a new kind of power — one that could heal, *and* one we have to defend against.
 Next episode, we go deep on that threat: "harvest now, decrypt later," Q-Day, and exactly what a smart organisation should be doing about it right now. [beat]
 If this made quantum click for you, subscribe — that's the whole point of this channel. See you in the next one.
@@ -74,20 +76,20 @@ If this made quantum click for you, subscribe — that's the whole point of this
 
 | # | Time | Shot | On-screen text | Visual / prompt | Narration cue |
 |---|------|------|----------------|-----------------|---------------|
-| 1 | 0:00–0:22 | HOST | — | Max, chest-up, concerned→intriguing. Subtle dark-teal studio. | "Right now, in a handful of labs…" |
+| 1 | 0:00–0:22 | QUBIT | — | Qubit, concerned→intrigued mood. Dark-teal backdrop. | "Right now, in a handful of labs…" |
 | 2 | 0:22–0:26 | DIAGRAM | Title: *Quantum Computers, Explained* | Title sting, logo, teal accent. | (music) |
-| 3 | 0:26–1:05 | HOST+PANEL | Panel: bits `0/1` switches vs qubit | Left: laptop turning photos into 0/1 streams. Right: glowing qubit. | "A normal computer stores everything as bits…" |
-| 4 | 1:05–1:25 | HOST | Lower-third: *It's physics — not magic* | Max reassuring, open hand. | "That's the whole idea…" |
-| 5 | 1:25–2:35 | HOST+PANEL | "Myth vs Reality" ×4 cards | Each myth crossed out in red, reality in teal. | "Let's kill the myths…" |
+| 3 | 0:26–1:05 | QUBIT+PANEL | Panel: bits `0/1` switches vs qubit | Left: laptop turning photos into 0/1 streams. Right: glowing qubit. | "A normal computer stores everything as bits…" |
+| 4 | 1:05–1:25 | QUBIT | Lower-third: *It's physics — not magic* | Qubit reassuring, arm open. | "That's the whole idea…" |
+| 5 | 1:25–2:35 | QUBIT+PANEL | "Myth vs Reality" ×4 cards | Each myth crossed out in red, reality in teal. | "Let's kill the myths…" |
 | 6 | 2:35–2:50 | DIAGRAM | Big text: *3 ideas — Superposition · Entanglement · Interference* | Three glowing nodes appear. | "Three ideas. Just three." |
 | 7 | 2:50–3:35 | SCENE→DIAGRAM | Chip: *Superposition* | Hero: spinning coin, motion-blurred, mid-air; then coin morphs into a qubit holding a 0/1 blend. | "Think of a spinning coin…" |
 | 8 | 3:35–4:15 | SCENE→DIAGRAM | Chip: *Entanglement* | Two linked coins, a glowing thread between them across a globe; "spooky action" caption. | "Now imagine two of those coins, linked…" |
 | 9 | 4:15–5:00 | SCENE→DIAGRAM | Chip: *Interference* | Pond ripples; two wave-sets; wrong answers cancel (fade), right answer amplifies (glows). | "Think of ripples on a pond…" |
-| 10 | 5:00–5:55 | HOST+PANEL | Split panel: *Upside* (teal) / *Risk* (amber) | Left icons: pill, battery, leaf, logistics. Right icons: padlock cracking. | "So what does this change for us?…" |
+| 10 | 5:00–5:55 | QUBIT+PANEL | Split panel: *Upside* (teal) / *Risk* (amber) | Left icons: pill, battery, leaf, logistics. Right icons: padlock cracking. | "So what does this change for us?…" |
 | 11 | 5:55–6:05 | DIAGRAM | Timeline: *"Q-Day" ~2030s* | Simple horizon timeline; "harvest now, decrypt later" tag. | "Experts call it Q-Day…" |
-| 12 | 6:05–6:20 | HOST → OUTRO | Outro card: subscribe + *Next: The Quantum Threat* | Max smiling; outro card slides in. | "Subscribe — see you in the next one." |
+| 12 | 6:05–6:20 | QUBIT → OUTRO | Outro card: subscribe + *Next: The Quantum Threat* | Qubit happy; outro card slides in. | "Subscribe — see you in the next one." |
 
-**Hero SCENE shots for Higgsfield (motion worth paying for):** #7 spinning coin, #8 linked coins across globe, #9 pond-ripple interference. Everything else = Remotion diagrams + host lip-sync.
+**Hero SCENE shots (optional Higgsfield hero clips, default off; otherwise Remotion vector):** #7 spinning coin, #8 linked coins across globe, #9 pond-ripple interference. Everything else = Remotion diagrams + the Qubit rig (no lip-sync needed).
 
 ---
 

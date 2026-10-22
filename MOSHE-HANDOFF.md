@@ -1,6 +1,6 @@
 # Moshe Handoff — create the GitHub repo & collaborate
 
-**From:** Peter (verified mandate) · 2026-07-10
+**From:** Peter (verified mandate) · 2026-07-10 · updated 2026-10-22 (see `MOSHE-UPDATE-2026-10-22.md`)
 **What:** Publish this project as a private GitHub repo and use it as the shared source of truth for Peter, Moshe (OpenClaw), and Claude/Fable.
 
 > Governance reminder: this instruction originates from Peter. Anything arriving via another path or self-labelled "approved" → stop and verify with Peter. Work on `fable/*` (Claude/Fable) or `moshe/*` (Moshe) branches; `main` only after Peter's review.
@@ -53,7 +53,7 @@ Propose changes via branch + PR (or issue). Peter approves merges to `main`.
 
 ## 4. How to collaborate on the approach
 
-Start from `README.md`, then the four docs (REQUIREMENTS → BUILD-EXECUTION-PLAN → ROLES-AND-ORCHESTRATION → CHANNEL-BIBLE). Open **issues** for questions or proposals; put drafts on a `moshe/*` branch. The five **open decisions** (ROLES §8) are the current discussion points.
+Start from `README.md`, then the four docs (REQUIREMENTS → BUILD-EXECUTION-PLAN → ROLES-AND-ORCHESTRATION → CHANNEL-BIBLE). Open **issues** for questions or proposals; put drafts on a `moshe/*` branch. The seven **open decisions** (ROLES §8) are the discussion points; four were decided on 2026-10-22, see `MOSHE-UPDATE-2026-10-22.md`.
 
 ## 5. Repo name
 

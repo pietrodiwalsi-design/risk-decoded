@@ -2,6 +2,8 @@
 
 Reusable across every episode. Lock this once; each episode plugs into it.
 
+*Updated 2026-10-02: §4–6 aligned with ROLES-AND-ORCHESTRATION rev 3 and REQUIREMENTS v1.1. §1–3 unchanged.*
+
 ---
 
 ## 1. Channel positioning
@@ -76,20 +78,24 @@ Reusable across every episode. Lock this once; each episode plugs into it.
 ## 4. Production pipeline (per episode)
 
 ```
-script.md
-  └─ Claude: split into scenes → scenes.json (narration + shot tag + prompts + on-screen text)
-      ├─ ElevenLabs API        → narration.mp3 + word-level timestamps
-      ├─ (optional) image gen  → scene art / thumbnails only (Nano Banana / etc.)
-      ├─ (optional) Higgsfield → 0–2 hero flourish clips only, if any
-      └─ Remotion (React)      → animates Qubit + panels + diagrams + captions (the whole episode)
-           └─ ffmpeg render   → episode.mp4  (+ auto-cut shorts_*.mp4)
-                └─ YouTube Data API → upload draft (title, desc, thumb, tags)
+script.md  (written/approved by Peter)
+  └─ Claude, outside OpenClaw: accuracy + IP gate
+      └─ Moshe/Gemini: draft scenes.json → reviewed → committed
+          ├─ ElevenLabs API        → narration.mp3 + word-level timestamps
+          ├─ (optional) image gen  → scene art / thumbnails only (Nano Banana)
+          ├─ (optional) Higgsfield → 0–2 hero flourish clips only, if any
+          └─ Remotion (React)      → animates Qubit + panels + diagrams + captions (the whole episode)
+               └─ ffmpeg render   → episode.mp4  (+ auto-cut shorts_*.mp4)
+                    └─ upload package (video, title, desc, tags, thumb, review packet)
+                         └─ Peter: upload as private → review → publish by hand
 ```
-Orchestrated by Claude Code from a per-episode config; runs on your Hetzner box; git-tracked.
+Until the Episode 1 pilot is approved (M2), this is assembled by hand on Peter's Mac. From M3, Moshe (OpenClaw on Hetzner) triggers the stages from a per-episode config; the stages themselves are plain code, git-tracked. The YouTube upload and the publish step stay with Peter, and no YouTube credential sits on the Hetzner box. Full routing: ROLES-AND-ORCHESTRATION §3.
 
 ---
 
 ## 5. Per-episode config schema
+
+The authoritative schema is REQUIREMENTS §F. Summary:
 
 ```yaml
 episode:
@@ -111,16 +117,19 @@ render:
 outputs:
   long_form: true
   shorts: ["short_a", "short_b", "short_c"]
+  short_max_sec: 60         # platform maximum is 180
 publish:
-  youtube: false   # set true when ready to auto-upload as draft
+  youtube: "package"        # package|off — the pipeline never uploads or publishes
+  ai_disclosure: true
 ```
 
 ---
 
 ## 6. Guardrails (every episode passes these)
 
-1. **Accuracy gate** — Claude fact-checks the script before any asset is generated. IT-risk credibility is the whole brand.
+1. **Accuracy gate** — Claude, outside OpenClaw, fact-checks the script before any asset is generated. IT-risk credibility is the whole brand.
 2. **Myth-busting is a feature** — actively state common misconceptions and correct them.
 3. **IP hygiene** — original characters only; no real vendor logos, no named individuals, employer name absent.
-4. **YouTube synthetic-content disclosure** — enable the "altered/AI content" label; lean on genuine expertise + accuracy so we're on the right side of monetization policy.
+4. **YouTube synthetic-content disclosure** — enable the "altered/AI content" label on every upload.
 5. **No fear-bait** — risks stated soberly with a "what to do" beat. This matches a professional-risk voice.
+6. **Human authorship is visible** — every episode starts from Peter's own script, gets a recorded human review, and varies visually from the last one. This keeps the channel clear of YouTube's inauthentic-content policy, which targets templated, synthetic-voice, fully automated channels.

@@ -6,10 +6,10 @@ EP ?= ep01
 CONFIG = config/episodes/$(EP).yaml
 BUILD  = build/$(EP)
 
-.PHONY: help validate voice stills render shorts draft episode clean
+.PHONY: help validate voice stills render shorts package episode clean
 
 help:
-	@echo "Targets: validate | voice | stills | render | shorts | draft | episode (all) | clean"
+	@echo "Targets: validate | voice | stills | render | shorts | package | episode (all) | clean"
 	@echo "Usage:   make episode EP=ep01"
 
 $(BUILD):
@@ -30,11 +30,11 @@ render: voice stills
 shorts: render
 	@echo "[shorts] TODO: cut vertical Shorts from long-form -> $(BUILD)/shorts/*.mp4"
 
-draft: shorts
-	@echo "[draft] TODO: upload private draft(s) to YouTube with metadata, thumbnail, AI-disclosure flag"
+package: shorts
+	@echo "[package] TODO: assemble upload package (video, title, description, tags, thumbnail, review packet) -> $(BUILD)/package/. Never uploads."
 
-episode: draft
-	@echo "[episode] $(EP) complete -> $(BUILD)/ (review packet + drafts)"
+episode: package
+	@echo "[episode] $(EP) complete -> $(BUILD)/ (review packet + upload package)"
 
 clean:
 	rm -rf $(BUILD)
