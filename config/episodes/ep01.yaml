@@ -5,7 +5,7 @@ episode:
   language: "en"
   target_runtime_sec: 380
 voice:
-  voice_id: "REPLACE_WITH_LOCKED_HOST_VOICE"
+  voice_id: "bTrXJpbeuC5KgriLhQeC"   # ElevenLabs voice "Peter", locked 2026-10-22
 image:
   max_images: 8
   style_refs: ["assets/style/qubit_ref_*.png"]

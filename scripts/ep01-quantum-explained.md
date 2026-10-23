@@ -1,6 +1,6 @@
 # Episode 01 — "Quantum Computers, Explained (Without the Hype)"
 
-**Version:** v4 · 2026-10-22 · (v3 + measurement gag changed from blushing to "snap into 0/1") · accuracy rewrite + lighter tone ("medium" humour level). Script approved by Peter 2026-10-22 (runtime ~7:20 accepted; measurement gag changed to a "snap into 0/1"). Accuracy sources (SRC items in section D) still to be attached at upload.
+**Version:** v4.1 · 2026-10-23 (scene 10: "small" replaced by "only a modest number of reliable qubits", accuracy fix) · v4 · 2026-10-22 · (v3 + measurement gag changed from blushing to "snap into 0/1") · accuracy rewrite + lighter tone ("medium" humour level). Script approved by Peter 2026-10-22 (runtime ~7:20 accepted; measurement gag changed to a "snap into 0/1"). Accuracy sources (SRC items in section D) still to be attached at upload.
 **Runtime target:** ~7:20 (v1 was ~6:20; caveats and jokes add ~60 s — estimate, confirm against the real voice take) · **Host:** Qubit · **Language:** English
 **Arc:** What it is → What it is *not* → the 3 principles → how it affects society
 **Series note:** Episode 2 picks up the security threat (HNDL / Q-Day) in depth.
@@ -50,7 +50,7 @@ But before the three big ideas, let's kill the myths. Because this is where most
 Myth one: "A quantum computer is just a much faster laptop." [beat] No. It will *not* replace your PC. For email, spreadsheets, video — an ordinary computer is better, and that's not going to change. Besides, many quantum chips need to be kept colder than outer space. Good luck fitting that in your backpack.
 Myth two: "It tries every possible answer at the same time and instantly picks the best one." [beat] Also no. If it really tried every answer at once, I'd have picked winning lottery numbers by now. [beat] It's the myth that sounds clever and is just… wrong. It doesn't hand you all the answers. Getting a *useful* answer out is the hard part — and we'll see why in a second.
 Myth three: "It's good at everything." No. A quantum computer only wins at a *specific* set of problems. For almost everything else, it's slower and more expensive than what you already own.
-And myth four: "It's here." [beat] Not really. Today's machines are small, noisy, and error-prone. The powerful version is still years away. But — and this matters — the *risk* it creates is already here. Hold that thought.
+And myth four: "It's here." [beat] Not really. Today's machines have only a modest number of reliable qubits, and they're noisy and error-prone. The powerful version is still years away. But — and this matters — the *risk* it creates is already here. Hold that thought.
 
 **[THE 3 PRINCIPLES — DIAGRAM intro]**
 So if it's not magic, what makes it special? Three ideas. Just three. [beat] Superposition, entanglement, and interference.
@@ -144,7 +144,7 @@ Status: **OK** = consistent with the established physics/standards as I know the
 | 11 | Many quantum chips run colder than outer space | OK | Superconducting qubits operate at about 10–20 millikelvin; outer space is about 2.7 K. Not true for every platform (trapped-ion, photonic), hence "many" |
 | 12 | Quantum computers should be good at simulating molecules and materials | OK | "Should", not "will" |
 | 13 | May help with some optimisation problems, still being tested | OK | Evidence for practical advantage is unsettled; wording is intentionally hedged |
-| 14 | Today's machines are small, noisy, error-prone; powerful fault-tolerant machines are years away | OK | Check for any major announcement before upload |
+| 14 | Today's machines have a modest number of reliable qubits and are noisy and error-prone; powerful fault-tolerant machines are years away | OK | Check for any major announcement before upload. "Small" removed 2026-10-23: today's machines are physically large (cryostats, racks); the limit is the number of reliable qubits, not physical size |
 | 15 | Harvest now, decrypt later is a present-day risk | OK | |
 | 16 | Q-Day: many expect 2030s or later, nobody knows | OK / SRC | Expert-survey spread is wide; cite one survey in the description |
 | 17 | Governments and banks are starting to migrate to quantum-resistant encryption | OK / SRC | NIST finalised its first three standards in August 2024 (FIPS 203, 204, 205) |
