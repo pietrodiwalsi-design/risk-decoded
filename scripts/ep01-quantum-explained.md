@@ -1,6 +1,6 @@
 # Episode 01 — "Quantum Computers, Explained (Without the Hype)"
 
-**Version:** v4.1 · 2026-10-23 (scene 10: "small" replaced by "only a modest number of reliable qubits", accuracy fix) · v4 · 2026-10-22 · (v3 + measurement gag changed from blushing to "snap into 0/1") · accuracy rewrite + lighter tone ("medium" humour level). Script approved by Peter 2026-10-22 (runtime ~7:20 accepted; measurement gag changed to a "snap into 0/1"). Accuracy sources (SRC items in section D) still to be attached at upload.
+**Version:** v4.4 · 2026-10-24 (accuracy gate closed, sources attached; no script change) · v4.3 · 2026-10-23 (scene 25: "fifty percent grateful" gag cut) · v4.2 · 2026-10-23 (scene 22: Shor's algorithm named, hedged) · v4.1 · 2026-10-23 (scene 10: "small" replaced by "only a modest number of reliable qubits", accuracy fix) · v4 · 2026-10-22 · (v3 + measurement gag changed from blushing to "snap into 0/1") · accuracy rewrite + lighter tone ("medium" humour level). Script approved by Peter 2026-10-22 (runtime ~7:20 accepted; measurement gag changed to a "snap into 0/1"). Accuracy gate closed 2026-10-24; sources in section D go into the YouTube description.
 **Runtime target:** ~7:20 (v1 was ~6:20; caveats and jokes add ~60 s — estimate, confirm against the real voice take) · **Host:** Qubit · **Language:** English
 **Arc:** What it is → What it is *not* → the 3 principles → how it affects society
 **Series note:** Episode 2 picks up the security threat (HNDL / Q-Day) in depth.
@@ -79,7 +79,7 @@ No interference? You'd just get random noise. Interference is how you get a real
 **[HOW IT AFFECTS SOCIETY — QUBIT → DIAGRAM]**
 Okay — superposition, entanglement, interference. So what does this actually *change* for the rest of us? Two sides. [beat]
 The upside could be big. Quantum computers should be good at simulating nature itself — molecules, materials, chemistry. That could mean new medicines, better batteries, cleaner fertiliser. They may also help with some optimisation problems in logistics, energy, and finance — though that part is still being tested.
-But there's a sharp edge. [beat] A quantum algorithm from 1994 can break the public-key encryption that sets up secure connections and verifies who you're talking to. Your bank. Your messages. Software updates.
+But there's a sharp edge. [beat] A quantum algorithm from 1994, called Shor's algorithm, shows that a large enough quantum computer could break the public-key encryption that sets up secure connections and verifies who you're talking to. Your bank. Your messages. Software updates.
 It does not break everything. The encryption that scrambles your actual data holds up much better — bigger keys are enough. The weak spot is how we agree on keys in the first place.
 The good news: the powerful machine isn't here yet. The bad news: attackers don't need it yet. They can steal encrypted data *today*, store it, and wait to unlock it later. The most patient burglars in history. [beat] That matters most for secrets that must last for years.
 Experts call the day this becomes possible "Q-Day." Many expect it in the 2030s or later — nobody knows exactly. Which is why governments and banks are *already* starting to move to new, quantum-resistant encryption.
@@ -87,7 +87,7 @@ Experts call the day this becomes possible "Q-Day." Many expect it in the 2030s 
 **[OUTRO — QUBIT]**
 So — a quantum computer isn't a faster laptop, it isn't magic, and it isn't here at full strength yet. It's a machine that turns three strange rules of physics into a new kind of power — one that could help, *and* one we have to defend against.
 Next episode, we go deep on that threat: "harvest now, decrypt later," Q-Day, and exactly what a smart organisation should be doing about it right now. [beat]
-If this made quantum click for you, subscribe — that's the whole point of this channel. My superposition is fifty percent grateful, fifty percent grateful. See you in the next one.
+If this made quantum click for you, subscribe — that's the whole point of this channel. See you in the next one.
 
 **[OUTRO CARD]**
 
@@ -126,18 +126,18 @@ Each Short: 9:16 vertical, captions burned in, host framed centre, 3–5s "subsc
 
 ## D. Accuracy gate — claim register
 
-Status: **OK** = consistent with the established physics/standards as I know them. **SRC** = attach a source link in the description before upload. I have not re-checked these live in this session; the SRC items are the ones to verify with a source at upload.
+Status: **OK** = consistent with the established physics/standards. **OK + source** = checked against a primary or authoritative source on 2026-10-24; link goes in the description. Rows 1, 6 and the unmarked OK rows rest on established physics, not re-fetched.
 
 | # | Claim in script | Status | Note / source to attach |
 |---|---|---|---|
 | 1 | Quantum computers threaten public-key crypto (RSA, elliptic-curve), not all encryption | OK / SRC | NIST post-quantum cryptography project; Grover's algorithm only gives a quadratic speed-up against symmetric keys (so AES with large keys remains fine) |
-| 2 | "A quantum algorithm from 1994" breaks public-key encryption | OK | Shor's algorithm (1994). Not named in the script to keep to the no-named-individuals rule |
+| 2 | Shor's algorithm (1994) shows a large enough quantum computer could break public-key encryption (RSA, elliptic-curve) | OK + source | Named 2026-10-23 at Peter's request: algorithm name used as a technical term, no biography or likeness. Hedged: needs a large, error-corrected machine that does not exist yet. Source: Shor, FOCS 1994 (conference); journal version SIAM J. Comput. 1997, arXiv quant-ph/9508027, DOI 10.1137/S0097539795293172 (arXiv page opened 2026-10-24) |
 | 3 | Superposition = weighted combination (amplitudes) of 0 and 1, not "two places" or "parallel universes" | OK | The coin is an analogy; the caveat is spoken in the script |
 | 4 | Measurement gives one definite 0 or 1; no consciousness needed | OK | |
 | 5 | "Tries all answers at once" is a myth; interference is what makes the right answer likely | OK | Most important correction in the episode |
-| 6 | Entanglement: correlations stronger than any classical hidden-variable explanation allows; no signalling | OK | Bell-type experiments, including loophole-free tests (2015) |
-| 7 | Nobel Prize in Physics 2022 for entanglement experiments | OK / SRC | nobelprize.org |
-| 8 | Einstein called entanglement "spooky action at a distance" | OK / SRC | Einstein's phrase (German: spukhafte Fernwirkung), from his correspondence in the 1940s. Attach a source |
+| 6 | Entanglement: correlations stronger than any classical hidden-variable explanation allows; no signalling | OK | Bell-type experiments, including loophole-free tests (2015). **Known simplification (scene 17, "outcomes aren't settled in advance"):** strictly, Bell tests rule out *local* hidden variables; non-local ones (e.g. Bohm) remain. Peter decided 2026-10-24 to keep the line as is. Do not make stronger claims ("nature is non-local", "definitive proof") in descriptions, Shorts or replies to comments |
+| 7 | Nobel Prize in Physics 2022 for entanglement experiments | OK + source | https://www.nobelprize.org/prizes/physics/2022/summary/ (opened 2026-10-24): Aspect, Clauser, Zeilinger, 1/3 each, "for experiments with entangled photons, establishing the violation of Bell inequalities and pioneering quantum information science". Script claims only "confirmed by experiments, Nobel 2022" |
+| 8 | Einstein called entanglement "spooky action at a distance" | OK / SRC | Einstein's phrase (German: spukhafte Fernwirkung), from his correspondence in the 1940s (letter to Max Born, 1947). Accepted by Peter 2026-10-24; cite a secondary source in the description if wanted |
 | 8b | Einstein is the man who told us time slows down when you move fast | OK | Special relativity, time dilation (moving clocks run slow; confirmed experimentally) |
 | 9 | Entanglement is a key ingredient of quantum advantage but not sufficient alone | OK | |
 | 10 | Interference: amplitudes add or cancel, enabling the right answer to be amplified | OK | |
@@ -146,8 +146,8 @@ Status: **OK** = consistent with the established physics/standards as I know the
 | 13 | May help with some optimisation problems, still being tested | OK | Evidence for practical advantage is unsettled; wording is intentionally hedged |
 | 14 | Today's machines have a modest number of reliable qubits and are noisy and error-prone; powerful fault-tolerant machines are years away | OK | Check for any major announcement before upload. "Small" removed 2026-10-23: today's machines are physically large (cryostats, racks); the limit is the number of reliable qubits, not physical size |
 | 15 | Harvest now, decrypt later is a present-day risk | OK | |
-| 16 | Q-Day: many expect 2030s or later, nobody knows | OK / SRC | Expert-survey spread is wide; cite one survey in the description |
-| 17 | Governments and banks are starting to migrate to quantum-resistant encryption | OK / SRC | NIST finalised its first three standards in August 2024 (FIPS 203, 204, 205) |
+| 16 | Q-Day: many expect 2030s or later, nobody knows | OK + source | Global Risk Institute, Quantum Threat Timeline Report 2025 (26 experts): cryptographically relevant quantum computer within 10 years 28–49% ("quite possible"), within 15 years 51–70% ("likely"). https://globalriskinstitute.org/publication/quantum-threat-timeline-report-2025b/ . Description wording: "experts see a real chance within 10–15 years". Spoken line unchanged |
+| 17 | Governments and banks are starting to migrate to quantum-resistant encryption | OK + source | NIST finalised its first three standards on 13 Aug 2024 (FIPS 203 ML-KEM, 204 ML-DSA, 205 SLH-DSA): https://www.nist.gov/news-events/news/2024/08/nist-releases-first-3-finalized-post-quantum-encryption-standards (found via search, page itself not opened) |
 
 **IP check (FR-Q3):** no real logos, no vendors, no employer reference. One historical scientist named (Einstein), approved by Peter on 2026-10-22; no likeness is drawn, only a text mention. Qubit is an original character.
 
@@ -164,8 +164,8 @@ Status: **OK** = consistent with the established physics/standards as I know the
 | 5 | Entanglement | Einstein / time slows down | Claim 8b |
 | 7 | Interference | Committee that vetoes everything but one proposal | None; the analogy supports "wrong answers cancel" |
 | 8 | Society | "The most patient burglars in history" | Supports HNDL (claim 15) |
-| 10 | Outro | "Fifty percent grateful, fifty percent grateful" | Pun on superposition, harmless |
+| 10 | Outro | ~~"Fifty percent grateful, fifty percent grateful"~~ cut 2026-10-23 (repeat added no value, not funny) | — |
 | V1 | Scene 7 | Qubit snaps into a rigid pose with a big 0 or 1 and a dry click when measured (replaces the blushing idea, which implied "being watched") | Visual only. Supports "always a single answer, no consciousness needed". Show the result as 0 or 1 at random, never as a chosen answer |
-| V2 | Scene 12 | Qubit splits in two on "fifty percent" | Visual only |
+| V2 | Scene 25 | ~~Qubit splits in two on "fifty percent"~~ cut with gag 10 | — |
 
 **Decided:** (a) ~7:20 runtime accepted, (b) visual gag V1 changed on 2026-10-22: no blushing; Qubit snaps rigid with a big 0 or 1 and a click, placed at the measurement line in scene 7.

@@ -17,6 +17,8 @@ Taken by Peter. These supersede the open items in ROLES §8 and REQUIREMENTS §I
 | 12 | Voice settings | Set B locked 2026-10-23: model eleven_multilingual_v2, stability 50, similarity boost 75, style 0, speed 1.00. Pauses via `<break time="0.5s" />` tags. First three clips (cold open) generated and measured. | — |
 | 9 | Phase scope | Peter and Claude build EP01 by hand first (scenes.json as data, animatic, voice, render). No Phase 2–4 engineering by Moshe before M2. | unchanged |
 | 13 | EP01 accuracy fix (scene 10) | Peter flagged that "small" is wrong for today's quantum computers (physically large machines). Replaced with "only a modest number of reliable qubits" (script v4.1). Clip `s10` to be regenerated with Set B and re-measured; timings for scene 10 and later scenes shift. | CHANNEL-BIBLE accuracy gate |
+| 14 | Shor's algorithm named (scene 22) | Peter asked to name it. Rule clarification: algorithm names that are eponyms (Shor's, Grover's) are technical terms and may be narrated; no biography, portrait or other named-person content, and no claims about the person. Claim hedged to "a large enough quantum computer could break". Clip `s22` to be regenerated (TTS spelling "Shore's", also in lexicon); timings shift. | CHANNEL-BIBLE §6.3 clarification (to be written into the Bible) |
+| 15 | Outro joke cut (scene 25) | "My superposition is fifty percent grateful, fifty percent grateful" removed (repeat added no value, not funny). Option A chosen by Peter 2026-10-23. Clip `s25` to be regenerated; outro about 4 s shorter. | — |
 
 Still open: key location check (ROLES §8.6), model pinning confirmation (§8.4), channel name, cadence.
 

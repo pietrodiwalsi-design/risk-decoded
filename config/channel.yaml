@@ -1,47 +1,57 @@
-# Risk Decoded — channel-wide defaults (inherited by every episode)
+# RiskDecoded — channel-wide defaults (inherited by every episode). Updated 2026-10-24.
 channel:
-  name: "Risk Decoded"          # working title — confirm
+  name: "RiskDecoded"
+  handle: "@RiskDecodedHQ"
   language_default: "en"
 
-host:
-  character: "qubit"            # Remotion SVG rig — no generative video
-  # signature demos: spin=superposition, twin=entanglement, ripple=interference
+format:
+  narrator: "voice only, never on screen"        # locked ElevenLabs voice "Peter"
+  experts: true                                   # expert characters speak with their own voices (voices map below)
+  cameos: true
+
+cast:                                             # see docs/CHARACTER-BIBLE.md
+  qubit:  {domain: "quantum, crypto",             status: "built (Remotion vector rig)"}
+  artie:  {domain: "AI risk, EU AI Act",          status: "SVG rig first pass; build when an episode needs it"}
+  clip:   {domain: "DORA, NIS2, regulation",      status: "SVG rig v2 (tawny owl, no glasses)"}
+  burt:   {domain: "legacy systems, patching",    status: "SVG rig v2 (mainframe cabinet, tape-reel eyes)"}
+  glitch: {domain: "threats, supply chain",       status: "SVG rig first pass"}
+style: "D — shaded SVG rigs in Remotion; white stick limbs, teal hands/feet (decision 21)"
+
+voices:
+  narrator: {provider: "elevenlabs", voice_id: "bTrXJpbeuC5KgriLhQeC", model: "eleven_multilingual_v2", licence: "commercial use confirmed (decision 17)"}
+  # other experts: OPEN (decision 22). Commercial licence is checked per voice and recorded before first use.
 
 brand:
   palette:
     bg_dark:   "#0F1E2E"
     bg_light:  "#F4F6F9"
-    accent:    "#18C3B4"        # teal — Qubit signature / explaining
-    caution:   "#F4A63B"        # amber — risk beats
-    danger:    "#E4572E"        # red — threats only
+    accent:    "#18C3B4"
+    caution:   "#F4A63B"
+    danger:    "#E4572E"
     text_dark: "#14171A"
     text_light:"#F7FAFC"
-  fonts:
-    heading: "Inter"            # geometric sans; swap if licensing prefers
-    caption: "Inter"
-  captions: true                # always on (accessibility + silent autoplay)
+  fonts: {heading: "Inter", caption: "Inter"}
+  captions: true
 
 render:
   resolution: "1920x1080"
   fps: 30
-  loudness_lufs: -14
+  loudness_lufs: -14          # voice normalised per clip (about -15.5 LUFS measured, TP -1.7 dBFS)
+  music: "own synthesised ambient bed, ducked -6 dB under speech"
+  word_timing: "local Whisper (tools/word-times.py), mapped to script, snapped to audio pauses"
+  composition_final: "Ep01Final"   # no animatic overlays; Ep01Animatic stays for review
   template: "risk-decoded-v1"
-  max_concurrency: 2            # cap render workers to protect Moshe's live services
+  max_concurrency: 2
 
 providers:
-  voice:
-    provider: "elevenlabs"
-    model: "eleven_multilingual_v2"
-  image:
-    provider: "nano_banana"     # Gemini image API (Moshe's existing Google link)
-    max_images: 8               # per-episode cost cap
-  motion:
-    provider: "none"            # or "higgsfield" for rare hero clips
+  voice: {provider: "elevenlabs", model: "eleven_multilingual_v2"}
+  image: {provider: "nano_banana", max_images: 8, note: "scene stills only; NOT for character art (decision 21)"}
+  motion: {provider: "none"}
 
 publish:
-  youtube: "package"            # package|off — the pipeline never uploads or publishes
-  ai_disclosure: true           # set synthetic-content flag on every upload
+  youtube: "package"          # package|off — the pipeline never uploads or publishes
+  ai_disclosure: true
 
 qa:
-  require_accuracy_pass: true   # Claude gate before assets are generated
-  block_on_ip_flags: true       # no real logos / named people / employer refs
+  require_accuracy_pass: true   # Claude gate (includes jokes and catchphrases) before assets are generated
+  block_on_ip_flags: true

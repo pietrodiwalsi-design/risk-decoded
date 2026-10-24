@@ -1,367 +1,365 @@
 {
-  "episode": "ep01",
-  "timing_basis": "Voice clips s01-s25 MEASURED (s10 re-recorded 2026-10-23 after accuracy fix, 19.9 s) from ElevenLabs (2026-10-23, set B, clip durations incl. trailing silence). title-sting (4 s) and outro-card (12 s) are fixed placeholders. Gaps between scenes not yet added.",
-  "scenes": [
-    {
-      "id": "cold-open-hook",
-      "order": 1,
-      "shot": "QUBIT",
-      "narration": "Right now, in labs and companies around the world, engineers are building a machine that could one day break the encryption that keeps much of the internet secure. [beat] The kind that protects your logins, your payments, your online banking. [beat]",
-      "on_screen_text": "Public-key encryption",
-      "assets": [
-        "backdrop:dark-teal"
-      ],
-      "qubit_state": "worried",
-      "mood": "caution",
-      "t_start": 0.0,
-      "t_end": 16.3
-    },
-    {
-      "id": "cold-open-panic",
-      "order": 2,
-      "shot": "QUBIT",
-      "narration": "Don't panic. Well — panic a little. Productively. [beat]",
-      "assets": [
-        "pose_change:thumbs_up@Productively",
-        "gag:sweat-drop"
-      ],
-      "qubit_state": "worried",
-      "mood": "caution",
-      "t_start": 16.3,
-      "t_end": 20.6
-    },
-    {
-      "id": "cold-open-fix",
-      "order": 3,
-      "shot": "QUBIT",
-      "narration": "It's called a quantum computer. [beat] And a lot of what you've heard about it… is wrong. Let's fix that.",
-      "qubit_state": "talking",
-      "mood": "calm",
-      "t_start": 20.6,
-      "t_end": 27.8
-    },
-    {
-      "id": "title-sting",
-      "order": 4,
-      "shot": "DIAGRAM",
-      "narration": "",
-      "on_screen_text": "Quantum Computers, Explained",
-      "assets": [
-        "title-sting",
-        "logo"
-      ],
-      "mood": "calm",
-      "t_start": 27.8,
-      "t_end": 31.8
-    },
-    {
-      "id": "what-bits-vs-qubit",
-      "order": 5,
-      "shot": "QUBIT+PANEL",
-      "narration": "So what actually *is* a quantum computer? [beat] A normal computer — your laptop, your phone — stores everything as bits. Tiny switches, each either a zero or a one. Every photo, every message, every video: just huge strings of zeros and ones. A quantum computer doesn't use ordinary switches. It uses *qubits* — and qubits follow the strange rules of quantum physics, the physics of the very, very small.",
-      "on_screen_text": "bits: 0 / 1 switches  vs  qubit",
-      "assets": [
-        "panel:bits-vs-qubit",
-        "laptop-bit-streams"
-      ],
-      "qubit_state": "point_right",
-      "mood": "calm",
-      "t_start": 31.8,
-      "t_end": 63.1
-    },
-    {
-      "id": "what-physics-not-magic",
-      "order": 6,
-      "shot": "QUBIT",
-      "narration": "That's the whole idea: a machine that computes using the laws of the quantum world. It is *not* science fiction, and it is *not* magic. It's physics — put to work.",
-      "on_screen_text": "It's physics, not magic",
-      "assets": [
-        "lower-third"
-      ],
-      "qubit_state": "idle",
-      "mood": "calm",
-      "t_start": 63.1,
-      "t_end": 74.4
-    },
-    {
-      "id": "myth-1-faster-laptop",
-      "order": 7,
-      "shot": "QUBIT+PANEL",
-      "narration": "But before the three big ideas, let's kill the myths. Because this is where most people go wrong. [beat] Myth one: \"A quantum computer is just a much faster laptop.\" [beat] No. It will *not* replace your PC. For email, spreadsheets, video — an ordinary computer is better, and that's not going to change. Besides, many quantum chips need to be kept colder than outer space. Good luck fitting that in your backpack.",
-      "on_screen_text": "Myth 1: just a faster laptop",
-      "assets": [
-        "card:myth-vs-reality",
-        "icon:fridge-colder-than-space"
-      ],
-      "qubit_state": "talking",
-      "mood": "caution",
-      "t_start": 74.4,
-      "t_end": 103.0
-    },
-    {
-      "id": "myth-2-all-answers",
-      "order": 8,
-      "shot": "QUBIT+PANEL",
-      "narration": "Myth two: \"It tries every possible answer at the same time and instantly picks the best one.\" [beat] Also no. If it really tried every answer at once, I'd have picked winning lottery numbers by now. [beat] It's the myth that sounds clever and is just… wrong. It doesn't hand you all the answers. Getting a *useful* answer out is the hard part — and we'll see why in a second.",
-      "on_screen_text": "Myth 2: tries every answer at once",
-      "assets": [
-        "card:myth-vs-reality",
-        "icon:lottery-ticket-crossed"
-      ],
-      "qubit_state": "talking",
-      "mood": "caution",
-      "t_start": 103.0,
-      "t_end": 131.1
-    },
-    {
-      "id": "myth-3-good-at-everything",
-      "order": 9,
-      "shot": "QUBIT+PANEL",
-      "narration": "Myth three: \"It's good at everything.\" No. A quantum computer only wins at a *specific* set of problems. For almost everything else, it's slower and more expensive than what you already own.",
-      "on_screen_text": "Myth 3: good at everything",
-      "assets": [
-        "card:myth-vs-reality"
-      ],
-      "qubit_state": "talking",
-      "mood": "caution",
-      "t_start": 131.1,
-      "t_end": 144.6
-    },
-    {
-      "id": "myth-4-its-here",
-      "order": 10,
-      "shot": "QUBIT+PANEL",
-      "narration": "And myth four: \"It's here.\" [beat] Not really. Today's machines have only a modest number of reliable qubits, and they're noisy and error-prone. The powerful version is still years away. But — and this matters — the *risk* it creates is already here. Hold that thought.",
-      "on_screen_text": "Myth 4: it's here",
-      "assets": [
-        "card:myth-vs-reality"
-      ],
-      "qubit_state": "talking",
-      "mood": "caution",
-      "t_start": 144.6,
-      "t_end": 164.5
-    },
-    {
-      "id": "three-ideas",
-      "order": 11,
-      "shot": "DIAGRAM",
-      "narration": "So if it's not magic, what makes it special? Three ideas. Just three. [beat] Superposition, entanglement, and interference.",
-      "on_screen_text": "Superposition · Entanglement · Interference",
-      "assets": [
-        "three-glowing-nodes"
-      ],
-      "mood": "calm",
-      "t_start": 164.5,
-      "t_end": 173.6
-    },
-    {
-      "id": "superposition-coin",
-      "order": 12,
-      "shot": "SCENE",
-      "narration": "One. Superposition. [beat] Picture a spinning coin. While it's spinning, it's neither heads nor tails — you just can't call it yet. Not heads. Not tails. Slightly nauseous. [beat]",
-      "on_screen_text": "Superposition",
-      "assets": [
-        "scene:spinning-coin"
-      ],
-      "qubit_state": "spin",
-      "mood": "calm",
-      "t_start": 173.6,
-      "t_end": 187.0
-    },
-    {
-      "id": "superposition-caveat",
-      "order": 13,
-      "shot": "DIAGRAM",
-      "narration": "A qubit is a bit like that. Instead of being locked to zero *or* one, it holds a *combination* of zero and one. But it's an imperfect picture. A real coin is secretly heads or tails the whole time — you just don't know which. A qubit really is a blend. Physicists describe it with numbers called amplitudes — and amplitudes can cancel each other out. Remember that. It matters in a minute.",
-      "on_screen_text": "Superposition = a blend, described by amplitudes",
-      "assets": [
-        "split:real-coin-vs-qubit",
-        "waves:amplitudes-plus-minus"
-      ],
-      "mood": "calm",
-      "t_start": 187.0,
-      "t_end": 215.3
-    },
-    {
-      "id": "superposition-measure",
-      "order": 14,
-      "shot": "SCENE",
-      "narration": "And no, this does not mean it's in two places, or living in parallel universes. When you *measure* a qubit, you always get a single answer: a zero or a one. No consciousness required — any measurement does it.",
-      "on_screen_text": "Measure it: always 0 or 1",
-      "assets": [
-        "gag:snap-0-1-click",
-        "results:1,0,0"
-      ],
-      "qubit_state": "snap",
-      "mood": "calm",
-      "t_start": 215.3,
-      "t_end": 232.1
-    },
-    {
-      "id": "entanglement-linked-coins",
-      "order": 15,
-      "shot": "SCENE",
-      "narration": "Two. Entanglement. [beat] Now imagine two of those coins, linked. Measure one, and the result tells you what you'll find when you measure the other — even if it's on the far side of the planet.",
-      "on_screen_text": "Entanglement",
-      "assets": [
-        "scene:linked-coins-globe"
-      ],
-      "qubit_state": "twin",
-      "mood": "calm",
-      "t_start": 232.1,
-      "t_end": 244.8
-    },
-    {
-      "id": "entanglement-einstein",
-      "order": 16,
-      "shot": "DIAGRAM",
-      "narration": "Einstein called this \"spooky action at a distance.\" And he's the man who told us time slows down when you move fast — so when *he* finds something weird, that's saying something. [beat] But it's real. Experiments have confirmed it again and again, and it earned a Nobel Prize in 2022.",
-      "on_screen_text": "\"Spooky action at a distance\"",
-      "assets": [
-        "caption:spooky-action",
-        "gag:slow-clock"
-      ],
-      "mood": "calm",
-      "t_start": 244.8,
-      "t_end": 264.8
-    },
-    {
-      "id": "entanglement-no-message",
-      "order": 17,
-      "shot": "DIAGRAM",
-      "narration": "Careful, though: nothing travels between them. No message is sent. You only notice the link when you compare results afterwards. And it's not like a pair of gloves split into two boxes — the gloves were left and right all along. Here, experiments show the outcomes aren't settled in advance.",
-      "on_screen_text": "Nothing travels between them",
-      "assets": [
-        "badge:no-message-sent",
-        "icon:gloves-in-boxes-crossed"
-      ],
-      "mood": "caution",
-      "t_start": 264.8,
-      "t_end": 283.9
-    },
-    {
-      "id": "entanglement-ingredient",
-      "order": 18,
-      "shot": "QUBIT",
-      "narration": "In a quantum computer, entanglement ties qubits into one shared state that separate bits can't copy. It's a key ingredient — not the whole recipe.",
-      "qubit_state": "twin",
-      "mood": "calm",
-      "t_start": 283.9,
-      "t_end": 295.3
-    },
-    {
-      "id": "interference-ripples",
-      "order": 19,
-      "shot": "SCENE",
-      "narration": "Three. Interference. And this is the one everyone forgets. [beat] Think of ripples on a pond. Where two waves meet, they can add up — a bigger wave — or cancel out to nothing.",
-      "on_screen_text": "Interference",
-      "assets": [
-        "scene:pond-ripples"
-      ],
-      "qubit_state": "ripple",
-      "mood": "calm",
-      "t_start": 295.3,
-      "t_end": 308.7
-    },
-    {
-      "id": "interference-answer",
-      "order": 20,
-      "shot": "DIAGRAM",
-      "narration": "Those amplitudes I mentioned work the same way. A quantum computer is built so that the *wrong* answers cancel each other out, and the *right* answer adds up and stands out. Think of a committee where everyone politely vetoes everything — except one proposal. That's the secret. It doesn't magically pick the best answer — it arranges the physics so the best answer is the one you're most likely to measure. No interference? You'd just get random noise. Interference is how you get a real answer *out*. And it only works for certain kinds of problems — which is why myth three is a myth.",
-      "on_screen_text": "Wrong answers cancel. The right one stands out.",
-      "assets": [
-        "waves:amplitudes-cancel-add",
-        "gag:committee-veto-stamps"
-      ],
-      "mood": "calm",
-      "t_start": 308.7,
-      "t_end": 347.0
-    },
-    {
-      "id": "society-upside",
-      "order": 21,
-      "shot": "QUBIT+PANEL",
-      "narration": "Okay — superposition, entanglement, interference. So what does this actually *change* for the rest of us? Two sides. [beat] The upside could be big. Quantum computers should be good at simulating nature itself — molecules, materials, chemistry. That could mean new medicines, better batteries, cleaner fertiliser. They may also help with some optimisation problems in logistics, energy, and finance — though that part is still being tested.",
-      "on_screen_text": "Upside",
-      "assets": [
-        "panel:split-upside-risk",
-        "icons:pill,battery,leaf,logistics",
-        "tag:still-being-tested"
-      ],
-      "qubit_state": "aha",
-      "mood": "calm",
-      "t_start": 347.0,
-      "t_end": 377.6
-    },
-    {
-      "id": "society-risk",
-      "order": 22,
-      "shot": "QUBIT+PANEL",
-      "narration": "But there's a sharp edge. [beat] A quantum algorithm from 1994 can break the public-key encryption that sets up secure connections and verifies who you're talking to. Your bank. Your messages. Software updates. It does not break everything. The encryption that scrambles your actual data holds up much better — bigger keys are enough. The weak spot is how we agree on keys in the first place.",
-      "on_screen_text": "Risk: public-key encryption",
-      "assets": [
-        "panel:split-upside-risk",
-        "icon:padlock-cracking-public-key",
-        "icon:padlock-intact-aes"
-      ],
-      "qubit_state": "worried",
-      "mood": "caution",
-      "t_start": 377.6,
-      "t_end": 406.6
-    },
-    {
-      "id": "society-hndl",
-      "order": 23,
-      "shot": "DIAGRAM",
-      "narration": "The good news: the powerful machine isn't here yet. The bad news: attackers don't need it yet. They can steal encrypted data *today*, store it, and wait to unlock it later. The most patient burglars in history. [beat] That matters most for secrets that must last for years.",
-      "on_screen_text": "Harvest now, decrypt later",
-      "assets": [
-        "tag:hndl",
-        "gag:patient-burglars"
-      ],
-      "mood": "threat",
-      "t_start": 406.6,
-      "t_end": 426.1
-    },
-    {
-      "id": "society-q-day",
-      "order": 24,
-      "shot": "DIAGRAM",
-      "narration": "Experts call the day this becomes possible \"Q-Day.\" Many expect it in the 2030s or later — nobody knows exactly. Which is why governments and banks are *already* starting to move to new, quantum-resistant encryption.",
-      "on_screen_text": "Q-Day: unknown, many expect 2030s or later",
-      "assets": [
-        "timeline:range-band"
-      ],
-      "mood": "caution",
-      "t_start": 426.1,
-      "t_end": 442.3
-    },
-    {
-      "id": "outro",
-      "order": 25,
-      "shot": "QUBIT",
-      "narration": "So — a quantum computer isn't a faster laptop, it isn't magic, and it isn't here at full strength yet. It's a machine that turns three strange rules of physics into a new kind of power — one that could help, *and* one we have to defend against. Next episode, we go deep on that threat: \"harvest now, decrypt later,\" Q-Day, and exactly what a smart organisation should be doing about it right now. [beat] If this made quantum click for you, subscribe — that's the whole point of this channel. My superposition is fifty percent grateful, fifty percent grateful. See you in the next one.",
-      "on_screen_text": "Next: The Quantum Threat",
-      "assets": [
-        "gag:qubit-splits-in-two@fifty percent"
-      ],
-      "qubit_state": "thumbs_up",
-      "mood": "calm",
-      "t_start": 442.3,
-      "t_end": 483.7
-    },
-    {
-      "id": "outro-card",
-      "order": 26,
-      "shot": "DIAGRAM",
-      "narration": "",
-      "on_screen_text": "Subscribe · Next: The Quantum Threat",
-      "assets": [
-        "outro-card"
-      ],
-      "mood": "calm",
-      "t_start": 483.7,
-      "t_end": 495.7
-    }
-  ]
+ "episode": "ep01",
+ "timing_basis": "Voice clips s01-s25 MEASURED (s10, s22 and s25 re-recorded 2026-10-23 after accuracy/script fixes: 19.9 s, 32.6 s, 36.2 s) from ElevenLabs (2026-10-23, set B, clip durations incl. trailing silence). title-sting (4 s) and outro-card (12 s) are fixed placeholders. Gaps between scenes not yet added.",
+ "scenes": [
+  {
+   "id": "cold-open-hook",
+   "order": 1,
+   "shot": "QUBIT",
+   "narration": "Right now, in labs and companies around the world, engineers are building a machine that could one day break the encryption that keeps much of the internet secure. [beat] The kind that protects your logins, your payments, your online banking. [beat]",
+   "on_screen_text": "Public-key encryption",
+   "assets": [
+    "backdrop:dark-teal"
+   ],
+   "qubit_state": "worried",
+   "mood": "caution",
+   "t_start": 0.0,
+   "t_end": 16.3
+  },
+  {
+   "id": "cold-open-panic",
+   "order": 2,
+   "shot": "QUBIT",
+   "narration": "Don't panic. Well — panic a little. Productively. [beat]",
+   "assets": [
+    "pose_change:thumbs_up@Productively",
+    "gag:sweat-drop"
+   ],
+   "qubit_state": "worried",
+   "mood": "caution",
+   "t_start": 16.3,
+   "t_end": 20.6
+  },
+  {
+   "id": "cold-open-fix",
+   "order": 3,
+   "shot": "QUBIT",
+   "narration": "It's called a quantum computer. [beat] And a lot of what you've heard about it… is wrong. Let's fix that.",
+   "qubit_state": "talking",
+   "mood": "calm",
+   "t_start": 20.6,
+   "t_end": 27.8
+  },
+  {
+   "id": "title-sting",
+   "order": 4,
+   "shot": "DIAGRAM",
+   "narration": "",
+   "on_screen_text": "Quantum Computers, Explained",
+   "assets": [
+    "title-sting",
+    "logo"
+   ],
+   "mood": "calm",
+   "t_start": 27.8,
+   "t_end": 31.8
+  },
+  {
+   "id": "what-bits-vs-qubit",
+   "order": 5,
+   "shot": "QUBIT+PANEL",
+   "narration": "So what actually *is* a quantum computer? [beat] A normal computer — your laptop, your phone — stores everything as bits. Tiny switches, each either a zero or a one. Every photo, every message, every video: just huge strings of zeros and ones. A quantum computer doesn't use ordinary switches. It uses *qubits* — and qubits follow the strange rules of quantum physics, the physics of the very, very small.",
+   "on_screen_text": "bits: 0 / 1 switches  vs  qubit",
+   "assets": [
+    "panel:bits-vs-qubit",
+    "laptop-bit-streams"
+   ],
+   "qubit_state": "point_right",
+   "mood": "calm",
+   "t_start": 31.8,
+   "t_end": 63.1
+  },
+  {
+   "id": "what-physics-not-magic",
+   "order": 6,
+   "shot": "QUBIT",
+   "narration": "That's the whole idea: a machine that computes using the laws of the quantum world. It is *not* science fiction, and it is *not* magic. It's physics — put to work.",
+   "on_screen_text": "It's physics, not magic",
+   "assets": [
+    "lower-third"
+   ],
+   "qubit_state": "idle",
+   "mood": "calm",
+   "t_start": 63.1,
+   "t_end": 74.4
+  },
+  {
+   "id": "myth-1-faster-laptop",
+   "order": 7,
+   "shot": "QUBIT+PANEL",
+   "narration": "But before the three big ideas, let's kill the myths. Because this is where most people go wrong. [beat] Myth one: \"A quantum computer is just a much faster laptop.\" [beat] No. It will *not* replace your PC. For email, spreadsheets, video — an ordinary computer is better, and that's not going to change. Besides, many quantum chips need to be kept colder than outer space. Good luck fitting that in your backpack.",
+   "on_screen_text": "Myth 1: just a faster laptop",
+   "assets": [
+    "card:myth-vs-reality",
+    "icon:fridge-colder-than-space"
+   ],
+   "qubit_state": "talking",
+   "mood": "caution",
+   "t_start": 74.4,
+   "t_end": 103.0
+  },
+  {
+   "id": "myth-2-all-answers",
+   "order": 8,
+   "shot": "QUBIT+PANEL",
+   "narration": "Myth two: \"It tries every possible answer at the same time and instantly picks the best one.\" [beat] Also no. If it really tried every answer at once, I'd have picked winning lottery numbers by now. [beat] It's the myth that sounds clever and is just… wrong. It doesn't hand you all the answers. Getting a *useful* answer out is the hard part — and we'll see why in a second.",
+   "on_screen_text": "Myth 2: tries every answer at once",
+   "assets": [
+    "card:myth-vs-reality",
+    "icon:lottery-ticket-crossed"
+   ],
+   "qubit_state": "talking",
+   "mood": "caution",
+   "t_start": 103.0,
+   "t_end": 131.1
+  },
+  {
+   "id": "myth-3-good-at-everything",
+   "order": 9,
+   "shot": "QUBIT+PANEL",
+   "narration": "Myth three: \"It's good at everything.\" No. A quantum computer only wins at a *specific* set of problems. For almost everything else, it's slower and more expensive than what you already own.",
+   "on_screen_text": "Myth 3: good at everything",
+   "assets": [
+    "card:myth-vs-reality"
+   ],
+   "qubit_state": "talking",
+   "mood": "caution",
+   "t_start": 131.1,
+   "t_end": 144.6
+  },
+  {
+   "id": "myth-4-its-here",
+   "order": 10,
+   "shot": "QUBIT+PANEL",
+   "narration": "And myth four: \"It's here.\" [beat] Not really. Today's machines have only a modest number of reliable qubits, and they're noisy and error-prone. The powerful version is still years away. But — and this matters — the *risk* it creates is already here. Hold that thought.",
+   "on_screen_text": "Myth 4: it's here",
+   "assets": [
+    "card:myth-vs-reality"
+   ],
+   "qubit_state": "talking",
+   "mood": "caution",
+   "t_start": 144.6,
+   "t_end": 164.5
+  },
+  {
+   "id": "three-ideas",
+   "order": 11,
+   "shot": "DIAGRAM",
+   "narration": "So if it's not magic, what makes it special? Three ideas. Just three. [beat] Superposition, entanglement, and interference.",
+   "on_screen_text": "Superposition · Entanglement · Interference",
+   "assets": [
+    "three-glowing-nodes"
+   ],
+   "mood": "calm",
+   "t_start": 164.5,
+   "t_end": 173.6
+  },
+  {
+   "id": "superposition-coin",
+   "order": 12,
+   "shot": "SCENE",
+   "narration": "One. Superposition. [beat] Picture a spinning coin. While it's spinning, it's neither heads nor tails — you just can't call it yet. Not heads. Not tails. Slightly nauseous. [beat]",
+   "on_screen_text": "Superposition",
+   "assets": [
+    "scene:spinning-coin"
+   ],
+   "qubit_state": "spin",
+   "mood": "calm",
+   "t_start": 173.6,
+   "t_end": 187.0
+  },
+  {
+   "id": "superposition-caveat",
+   "order": 13,
+   "shot": "DIAGRAM",
+   "narration": "A qubit is a bit like that. Instead of being locked to zero *or* one, it holds a *combination* of zero and one. But it's an imperfect picture. A real coin is secretly heads or tails the whole time — you just don't know which. A qubit really is a blend. Physicists describe it with numbers called amplitudes — and amplitudes can cancel each other out. Remember that. It matters in a minute.",
+   "on_screen_text": "Superposition = a blend, described by amplitudes",
+   "assets": [
+    "split:real-coin-vs-qubit",
+    "waves:amplitudes-plus-minus"
+   ],
+   "mood": "calm",
+   "t_start": 187.0,
+   "t_end": 215.3
+  },
+  {
+   "id": "superposition-measure",
+   "order": 14,
+   "shot": "SCENE",
+   "narration": "And no, this does not mean it's in two places, or living in parallel universes. When you *measure* a qubit, you always get a single answer: a zero or a one. No consciousness required — any measurement does it.",
+   "on_screen_text": "Measure it: always 0 or 1",
+   "assets": [
+    "gag:snap-0-1-click",
+    "results:1,0,0"
+   ],
+   "qubit_state": "snap",
+   "mood": "calm",
+   "t_start": 215.3,
+   "t_end": 232.1
+  },
+  {
+   "id": "entanglement-linked-coins",
+   "order": 15,
+   "shot": "SCENE",
+   "narration": "Two. Entanglement. [beat] Now imagine two of those coins, linked. Measure one, and the result tells you what you'll find when you measure the other — even if it's on the far side of the planet.",
+   "on_screen_text": "Entanglement",
+   "assets": [
+    "scene:linked-coins-globe"
+   ],
+   "qubit_state": "twin",
+   "mood": "calm",
+   "t_start": 232.1,
+   "t_end": 244.8
+  },
+  {
+   "id": "entanglement-einstein",
+   "order": 16,
+   "shot": "DIAGRAM",
+   "narration": "Einstein called this \"spooky action at a distance.\" And he's the man who told us time slows down when you move fast — so when *he* finds something weird, that's saying something. [beat] But it's real. Experiments have confirmed it again and again, and it earned a Nobel Prize in 2022.",
+   "on_screen_text": "\"Spooky action at a distance\"",
+   "assets": [
+    "caption:spooky-action",
+    "gag:slow-clock"
+   ],
+   "mood": "calm",
+   "t_start": 244.8,
+   "t_end": 264.8
+  },
+  {
+   "id": "entanglement-no-message",
+   "order": 17,
+   "shot": "DIAGRAM",
+   "narration": "Careful, though: nothing travels between them. No message is sent. You only notice the link when you compare results afterwards. And it's not like a pair of gloves split into two boxes — the gloves were left and right all along. Here, experiments show the outcomes aren't settled in advance.",
+   "on_screen_text": "Nothing travels between them",
+   "assets": [
+    "badge:no-message-sent",
+    "icon:gloves-in-boxes-crossed"
+   ],
+   "mood": "caution",
+   "t_start": 264.8,
+   "t_end": 283.9
+  },
+  {
+   "id": "entanglement-ingredient",
+   "order": 18,
+   "shot": "QUBIT",
+   "narration": "In a quantum computer, entanglement ties qubits into one shared state that separate bits can't copy. It's a key ingredient — not the whole recipe.",
+   "qubit_state": "twin",
+   "mood": "calm",
+   "t_start": 283.9,
+   "t_end": 295.3
+  },
+  {
+   "id": "interference-ripples",
+   "order": 19,
+   "shot": "SCENE",
+   "narration": "Three. Interference. And this is the one everyone forgets. [beat] Think of ripples on a pond. Where two waves meet, they can add up — a bigger wave — or cancel out to nothing.",
+   "on_screen_text": "Interference",
+   "assets": [
+    "scene:pond-ripples"
+   ],
+   "qubit_state": "ripple",
+   "mood": "calm",
+   "t_start": 295.3,
+   "t_end": 308.7
+  },
+  {
+   "id": "interference-answer",
+   "order": 20,
+   "shot": "DIAGRAM",
+   "narration": "Those amplitudes I mentioned work the same way. A quantum computer is built so that the *wrong* answers cancel each other out, and the *right* answer adds up and stands out. Think of a committee where everyone politely vetoes everything — except one proposal. That's the secret. It doesn't magically pick the best answer — it arranges the physics so the best answer is the one you're most likely to measure. No interference? You'd just get random noise. Interference is how you get a real answer *out*. And it only works for certain kinds of problems — which is why myth three is a myth.",
+   "on_screen_text": "Wrong answers cancel. The right one stands out.",
+   "assets": [
+    "waves:amplitudes-cancel-add",
+    "gag:committee-veto-stamps"
+   ],
+   "mood": "calm",
+   "t_start": 308.7,
+   "t_end": 347.0
+  },
+  {
+   "id": "society-upside",
+   "order": 21,
+   "shot": "QUBIT+PANEL",
+   "narration": "Okay — superposition, entanglement, interference. So what does this actually *change* for the rest of us? Two sides. [beat] The upside could be big. Quantum computers should be good at simulating nature itself — molecules, materials, chemistry. That could mean new medicines, better batteries, cleaner fertiliser. They may also help with some optimisation problems in logistics, energy, and finance — though that part is still being tested.",
+   "on_screen_text": "Upside",
+   "assets": [
+    "panel:split-upside-risk",
+    "icons:pill,battery,leaf,logistics",
+    "tag:still-being-tested"
+   ],
+   "qubit_state": "aha",
+   "mood": "calm",
+   "t_start": 347.0,
+   "t_end": 377.6
+  },
+  {
+   "id": "society-risk",
+   "order": 22,
+   "shot": "QUBIT+PANEL",
+   "narration": "But there's a sharp edge. [beat] A quantum algorithm from 1994, called Shor's algorithm, shows that a large enough quantum computer could break the public-key encryption that sets up secure connections and verifies who you're talking to. Your bank. Your messages. Software updates. It does not break everything. The encryption that scrambles your actual data holds up much better — bigger keys are enough. The weak spot is how we agree on keys in the first place.",
+   "on_screen_text": "Risk: public-key encryption",
+   "assets": [
+    "panel:split-upside-risk",
+    "icon:padlock-cracking-public-key",
+    "icon:padlock-intact-aes"
+   ],
+   "qubit_state": "worried",
+   "mood": "caution",
+   "t_start": 377.6,
+   "t_end": 410.2
+  },
+  {
+   "id": "society-hndl",
+   "order": 23,
+   "shot": "DIAGRAM",
+   "narration": "The good news: the powerful machine isn't here yet. The bad news: attackers don't need it yet. They can steal encrypted data *today*, store it, and wait to unlock it later. The most patient burglars in history. [beat] That matters most for secrets that must last for years.",
+   "on_screen_text": "Harvest now, decrypt later",
+   "assets": [
+    "tag:hndl",
+    "gag:patient-burglars"
+   ],
+   "mood": "threat",
+   "t_start": 410.2,
+   "t_end": 429.7
+  },
+  {
+   "id": "society-q-day",
+   "order": 24,
+   "shot": "DIAGRAM",
+   "narration": "Experts call the day this becomes possible \"Q-Day.\" Many expect it in the 2030s or later — nobody knows exactly. Which is why governments and banks are *already* starting to move to new, quantum-resistant encryption.",
+   "on_screen_text": "Q-Day: unknown, many expect 2030s or later",
+   "assets": [
+    "timeline:range-band"
+   ],
+   "mood": "caution",
+   "t_start": 429.7,
+   "t_end": 445.9
+  },
+  {
+   "id": "outro",
+   "order": 25,
+   "shot": "QUBIT",
+   "narration": "So — a quantum computer isn't a faster laptop, it isn't magic, and it isn't here at full strength yet. It's a machine that turns three strange rules of physics into a new kind of power — one that could help, *and* one we have to defend against. Next episode, we go deep on that threat: \"harvest now, decrypt later,\" Q-Day, and exactly what a smart organisation should be doing about it right now. [beat] If this made quantum click for you, subscribe — that's the whole point of this channel. See you in the next one.",
+   "on_screen_text": "Next: The Quantum Threat",
+   "assets": [],
+   "qubit_state": "thumbs_up",
+   "mood": "calm",
+   "t_start": 445.9,
+   "t_end": 482.1
+  },
+  {
+   "id": "outro-card",
+   "order": 26,
+   "shot": "DIAGRAM",
+   "narration": "",
+   "on_screen_text": "Subscribe · Next: The Quantum Threat",
+   "assets": [
+    "outro-card"
+   ],
+   "mood": "calm",
+   "t_start": 482.1,
+   "t_end": 494.1
+  }
+ ]
 }
