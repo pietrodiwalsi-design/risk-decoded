@@ -56,3 +56,5 @@ timestamp,clip_id,speaker,chars,duration_sec,max_vol_db,status,retries,cumulativ
 2026-10-27T20:05:48.807843,s10-4-glitch,glitch,16,1.02,-7.80,pass,0,8883,,Please don't.
 2026-10-27T20:05:52.349244,s11-2-glitch,glitch,42,2.32,-3.90,failed_checks,1,8967,"Whisper WER=12.5% (> 8%). Transcribed: 'Prepared and skeptical, put it on a mug.'","Prepared and skeptical, put it on a mug."
 2026-10-27T20:05:53.967861,s11-4-glitch,glitch,21,1.28,-8.50,pass,0,8988,,A colleague finally.
+2026-10-27T21:24:23.125759,s1-6-qubit-take2,qubit,89,5.93,-9.40,pass,0,,,"The short answer, a few specific kinds of problems, not everything, let's find out which."
+2026-10-27T21:24:25.192496,s1-6-qubit-take3,qubit,89,6.45,-9.00,pass,0,,,The short answer. A few specific kinds of problems. Not everything. Let's find out which.
